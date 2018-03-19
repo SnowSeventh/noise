@@ -12,3 +12,8 @@
 8. [春 招 | 深信服春招网申倒计时！超高年薪，速来投递！](https://mp.weixin.qq.com/s/TH1ofm1mtNeIIk0U6FCkVw)
 9. [内 推丨搜狐2018春招网申开启，11大业务部门、6大职位方向可投递简历！](https://mp.weixin.qq.com/s/r7CD1SYaqV_EuCJlzekMWg)
 10. [内推-上海 | 某基金公司招聘债券交易员](https://mp.weixin.qq.com/s/2xNeHieQIQg58JM-szL2Mg)
+
+## 三月十九日
+1. 参加求职宣讲会，看看有没有什么有用的消息；
+2. 昨天的投递做法有误，本来机会就不多，每个都不能怠慢；
+3. 可以去各家机构的官网看看有没有消息；
