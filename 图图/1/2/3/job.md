@@ -19,3 +19,6 @@
 3. 可以去各家机构的官网看看有没有消息；
 4. [【社招&实习】上海 | 东方证券研究所招聘固定收益正式员工和实习生招聘
 ](https://mp.weixin.qq.com/s/OVqAdADnqRUeAJpW36jzhg)已投，这个简单，发邮件即可；
+
+## 三月二十四日
+1.[百度上海](https://talent.baidu.com/external/baidu/index.html#/individualCenter)  机器学习方向，已投；
