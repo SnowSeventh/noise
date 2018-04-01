@@ -132,4 +132,4 @@ c) $threshold = 2$
 
 
     Now the algorithm terminates and an emptyset occurs.
-    
+## Question 3
