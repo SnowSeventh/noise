@@ -3,7 +3,7 @@
 
                                                                   UID:3035420027
 ***
-## Question 2
+## Question 1
 a) $threshold=3$
 - Pass 1:
 
@@ -53,7 +53,7 @@ c) $threshold = 2$
 
   apparently, nothing in this step
 ## Question 2
-1. - step 1
+1. - Step 1
 
       $centroids: p1, p4$
 
@@ -64,8 +64,6 @@ c) $threshold = 2$
       $cluster A:p1,p2$
 
       $cluster B:p4,p3,p5,p6,p7$
-    - step 2
+    - Step 2
 
       $centroids:A:=\frac{p1+p2}{2}=(0,1/4),B:=\frac{p3+p4+p5+p6+p7}{5}=(3,7/10)$
-
-      
