@@ -1,3 +1,6 @@
+<script type="text/javascript" async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 # AS1
                                                                   Editor: Wang Peng
 
@@ -53,17 +56,18 @@ c) $threshold = 2$
 
   apparently, nothing in this step
 ## Question 2
-1. - Step 1
+1.
+- Step 1
 
-      $centroids: p1, p4$
+    $centroids: p1, p4$
 
-      $d(p1,p2)=1/2, d(p1,p3)=\sqrt{5}/2,d(p1,p5)=4,d(p1,p6)=\sqrt{17},d(p1,p7)=\sqrt{26}$
+    $d(p1,p2)=1/2, d(p1,p3)=\sqrt{5}/2,d(p1,p5)=4,d(p1,p6)=\sqrt{17},d(p1,p7)=\sqrt{26}$
 
-      $d(p4,p2)=\sqrt{5}/2,d(p4,p3)=1/2,d(p4,p5)=\sqrt{10},d(p4,p6)=3,d(p4,p7)=4$
+    $d(p4,p2)=\sqrt{5}/2,d(p4,p3)=1/2,d(p4,p5)=\sqrt{10},d(p4,p6)=3,d(p4,p7)=4$
 
-      $cluster A:p1,p2$
+    $cluster A:p1,p2$
 
-      $cluster B:p4,p3,p5,p6,p7$
-    - Step 2
+    $cluster B:p4,p3,p5,p6,p7$
+- Step 2
 
-      $centroids:A:=\frac{p1+p2}{2}=(0,1/4),B:=\frac{p3+p4+p5+p6+p7}{5}=(3,7/10)$
+    $centroids:A:=\frac{p1+p2}{2}=(0,1/4),B:=\frac{p3+p4+p5+p6+p7}{5}=(3,7/10)$
