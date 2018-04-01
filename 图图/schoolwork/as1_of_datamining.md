@@ -25,7 +25,7 @@ a) $threshold=3$
 
   No result because abd contains ad, which is not frequent item according to Pass 2.
 
-b) $confidence = s(b\bigcup d)/s(b) = 3/5 = 0.6, sufficient$
+b) $confidence = \frac{s(b\bigcup d)}{s(b)} = 3/5 = 0.6, sufficient$
 
 c) $threshold = 2$
 
@@ -103,4 +103,33 @@ c) $threshold = 2$
   Now, the algorithm terminates and centroids will not change.
 
 2. Empty Cluster
-  
+
+    Suppose there are 7 points:  
+
+    $p1=(1,11/4),p2=(1,5/2),p3=(1/2,0),p4=(2,3),p5=(5,3),p6=(6,2),p7=(1,3)$
+
+    Use K-means to classfy these data. This time, $K=3$, initate centroids as p3, p5, p6 and we will ignore the details of calculation.
+
+  - Step 1
+
+    $centroids: p3,p5,p6$
+
+    $clusterA: p1,p2,p3,p7$
+
+    $clusterB: p4,p5$
+
+    $clusterC: p6$
+
+  - Step 2
+
+    $centroids: A:=\frac{p1+p2+p3+p7}{4}=(7/8,33/16), B:=\frac{p4+p5}{2}=(7/2,3),C:=p6=(6,2)$
+
+    $clusterA: p1,p2,p3,p4,p7$
+
+    $clusterB: \emptyset$
+
+    $clusterC: p5,p6$
+
+
+    Now the algorithm terminates and an emptyset occurs.
+    
