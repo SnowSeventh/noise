@@ -108,7 +108,7 @@ c) $threshold = 2$
 
     $p1=(1,11/4),p2=(1,5/2),p3=(1/2,0),p4=(2,3),p5=(5,3),p6=(6,2),p7=(1,3)$
 
-    Use K-means to classfy these data. This time, $K=3$, initate centroids as p3, p5, p6 and we will ignore the details of calculation.
+    Use K-means to classify these data. This time, $K=3$, initate centroids as p3, p5, p6 and we will ignore the details of calculation.
 
   - Step 1
 
@@ -133,3 +133,38 @@ c) $threshold = 2$
 
     Now the algorithm terminates and an emptyset occurs.
 ## Question 3
+***All the details are in code files(question3.ipynb)***
+1. This is time, *SSE=1728*. However, it will change if you run again.
+
+2. As *k=8* this time, so $\frac{k!}{k^k}=0.00240325927$. Apparently, it is far from enough to set n_init=10. To decrease SSE, we can increase the value of n_init.After we set the n_init=10000, the SSE has decreased to 1520 almost.
+
+3. - Hardware:  'Hewlett-Packard'
+   - Material:  'DuPont', 'Caterpillar', 'Alcoa'
+   - Finance:   'American Express', 'Bank of America', 'Walt Disney', 'JPMorgan Chase'
+   - Electric:  'Cisco Systems'
+   - Manufacturing: 'Chevron', 'Pfizer', 'ExxonMobil'
+   - Fast consumer industry/Retail industry:  'Kraft', 'Verizon', 'IBM', 'The Home Depot', 'Procter & Gamble', 'Wal-Mart', 'General Electric', 'AT&T', 'Travelers', 'McDonalds', 'Coca-Cola'
+   - Technology:  'Boeing', 'Microsoft', 'Intel', 'United Technologies', '3M', 'Johnson & Johnson'
+   - Biology: 'Merck'
+
+4. According to the output shown in code file, it seems the clusters we get are better. L2 normalization can be used to deal with the effect of distance in the space. For example, suppose we have a series of points: (1,1), (2,2), (3,3) .......They look separate at first. However, they willconverge to just one point (0.707,0.707) after normallized with L2 norm. That is what we really want.
+
+5. I think the method of ***bisecting k-means*** may be effecive and write a program to test in code file. All the paras are the same as **Part 1**. However, the SSE don't turn to be smaller. Maybe k-means++ is better.
+
+## Question 4
+***All the details are in code files(question4.ipynb)***
+1. - Supp=0.37,Conf=0.9,Shape=4 -> Density=3
+   - Supp=0.26,Conf=0.9,Margin=1 Density=3 -> BI-RADS=4
+   - Supp=0.3,Conf=0.91,Margin=1 Severity=0 -> BI-RADS=4
+2. - Supp=0.17, Conf=0.91, BI-RADS=4 Shape=1 -> Severity=0
+   - Supp=0.25, Conf=0.91, BI-RADS=5 Shape=4 -> Severity=1
+
+   Actually, there are many such kind of rules. Find details in code file.
+3. According to **Part 2**, we can get these kind of rules:*BI-RADS=4 Margin=1 -> Severity=0* or *BI-RADS=4 Shape=1 -> Severity=0*, which are not accurate.
+4. In this part, we should find the num of itemsets which contain *Age=35* and *Age=35,Severity=0* separatly. After calculation, the confidence and support are 0.0769 and 0.001 separatly. So we should ignore this rule.
+5. In the last part, we can modify the attribute of 'Age' in this way: given an age n to find rules whose age are bigger than n, we can change the attribute of some rows whose age are bigger or equal to n and let them have a same value of age.
+
+    By doing this, we can get rules like this:
+
+    Rule: *BI-RADS=5 Age=over58 Density=3 -> Severity=1*
+*Supp=0.2, Conf=0.93*
