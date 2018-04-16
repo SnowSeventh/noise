@@ -1,0 +1,17 @@
+# AS2
+                                                                  Editor: Wang Peng
+
+                                                                  UID:3035420027
+***
+## Question 1
+## Question 2 (NaiveBayes)
+
+|junior|senior|
+|-|-|
+|$P(junior)=\frac{7}{11}$|$P(senior)=\frac{4}{11}$|
+|$P(marketing|junior)=\frac{2}{7}$|$P(marketing|senior)=\frac{1}{4}$|
+|$P(31-35|junior)=\frac{3}{7}$|$P(31-35|senior)=\frac{1}{4}$|
+|$P(46k-50k|junior)=\frac{3}{7}$|$P(46k-50k|senior)=\frac{1}{4}$|
+|$Product=\frac{18}{539}$|$Product=\frac{1}{176}$|
+
+Apparently, $P(junior)>P(senior),->junior$
