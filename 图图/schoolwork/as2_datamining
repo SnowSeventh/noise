@@ -3,7 +3,34 @@
 
                                                                   UID:3035420027
 ***
-## Question 1
+## Question 1 (Decision tree)
+- **a)** First split
+
+  **split with a**
+  |$a=0$|$a=1$|
+  |-|-|
+  |$0:3,\frac{3}{8}$|$1:5,\frac{5}{8}$|
+  |$C0:0,0; C1:3,1$|$C0:3,\frac{3}{5}; C1:2,\frac{2}{5}$|
+  $Gini=\frac{5}{8}\times(1-(\frac{3}{5})^2-(\frac{2}{5})^2)=\frac{3}{10}$
+
+  **split with b**
+  |$b=0$|$b=1$|
+  |-|-|
+  |$0:4,\frac{1}{2}$|$1:4,\frac{1}{2}$|
+  |$C0:1,\frac{1}{4}; C1:3,\frac{3}{4}$|$C0:2,\frac{1}{2}; C1:2,\frac{1}{2}$|
+  $Gini=\frac{1}{2}\times(1-(\frac{1}{4})^2-(\frac{3}{4})^2)+\frac{1}{2}\times\frac{1}{2}=\frac{7}{16}$
+
+  **So,we should first split with a**
+- **b)** Second split
+
+  **Apparently, we can only split with b**
+
+  |$b=0$|$b=1$|
+  |-|-|
+  |$0:2,\frac{2}{5}$|$1:3,\frac{3}{5}$|
+  |$C0:1,\frac{1}{2}; C1:1,\frac{1}{2}$|$C0:2,\frac{2}{3}; C1:1,\frac{1}{3}$|
+  $Gini=\frac{3}{5}\times(1-(\frac{2}{3})^2-(\frac{1}{3})^2)+\frac{2}{5}\times\frac{1}{2}=\frac{7}{15}$
+
 ## Question 2 (NaiveBayes)
 
 |junior|senior|
@@ -15,3 +42,5 @@
 |$Product=\frac{18}{539}$|$Product=\frac{1}{176}$|
 
 Apparently, $P(junior)>P(senior),->junior$
+
+## Question 3 (hands-on on decision tree classi- fier)
