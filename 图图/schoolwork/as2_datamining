@@ -77,3 +77,28 @@ Apparently, $P(junior)>P(senior),->junior$
 
     In this case, my recommendation is the modified tree. In the next part, you can find that the structure of it is really clear with acceptable error rate
 5.
+![modified](https://github.com/qiyexue777/noise/blob/master/图图/schoolwork/modified.png?raw=true)
+
+
+As you can see from the modified tree, the structure of this tree is amazing. All the work is done with only 2 splits:
+- split with redshift <= 0.002, then we will get all the class 'Star' on the left side;
+- split with redshift <= 0.218, then class 'quasars' will be on the right side while the remaining items are all class 'galaxies'
+6. Sure. According to part 5, only the first 2 splits in the modified tree are necessary, which can classify really well with low error rate.
+
+    The pruned tree looks like this:
+
+![pruned](https://github.com/qiyexue777/noise/blob/master/图图/schoolwork/pruned.png?raw=true)
+
+7.
+## Question 4 (hands-on naive Bayes classifier)
+**All details can be found at question4.ipynb**
+1. average accuracy of MultinomialNB = 0.7375
+
+    average accuracy of GaussianNB = 0.7125
+2. As you can see, the accuracy of **random classifier** is around 0.137, which much worse than **MultinomialNB**
+3. After test, the accuracy increases to 0.7875 when we do not ignore stopwords. I guess maybe some stopwords contain key information and can boost the accuracy
+4. seta=['polguns', 'hockey', 'machw']
+
+    setb=['electronics', 'ibmhw', 'machw']
+
+    After test, the accuracy of seta is higher than setb. I suppose that it is because the seta contains 3 totally different items while the items of setb all belong to technology area.
