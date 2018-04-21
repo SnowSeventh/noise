@@ -33,12 +33,14 @@
     $Gini=\frac{3}{5}\times(1-(\frac{2}{3})^2-(\frac{1}{3})^2)+\frac{2}{5}\times\frac{1}{2}=\frac{7}{15}$
 
     Finally, the tree looks like this:
+
     ![tree](/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t1.png)
 
 - **b)** I suppose not
 
   After calculation, generalization error of first split with a =$\frac{2+0.5\times3}{8}=0.4375$
   And the tree structure of first split with b looks like this:
+
   ![tree2](/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t2.png)
 
   generalization error of first split with b =$\frac{2+0.5\times4}{8}=0.5$
@@ -63,11 +65,11 @@
 
 Apparently, $P(junior)>P(senior),->junior$
 
-## Question 3 (hands-on on decision tree classi- fier)
+## Question 3 (hands-on on decision tree classifier)
 **All the details can be found in question3.ipynb**
 
 1.
-![dectree](https://github.com/qiyexue777/noise/blob/master/图图/schoolwork/dectree.png?raw=true)
+![dectree](/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/dectree.png)
 
 2. $GeneralizationError=0.00515$
 
@@ -77,8 +79,7 @@ Apparently, $P(junior)>P(senior),->junior$
 
     In this case, my recommendation is the modified tree. In the next part, you can find that the structure of it is really clear with acceptable error rate
 5.
-![modified](https://github.com/qiyexue777/noise/blob/master/图图/schoolwork/modified.png?raw=true)
-
+![modified](/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/modified.png)
 
 As you can see from the modified tree, the structure of this tree is amazing. All the work is done with only 2 splits:
 - split with redshift <= 0.002, then we will get all the class 'Star' on the left side;
@@ -87,7 +88,7 @@ As you can see from the modified tree, the structure of this tree is amazing. Al
 
     The pruned tree looks like this:
 
-![pruned](https://github.com/qiyexue777/noise/blob/master/图图/schoolwork/pruned.png?raw=true)
+![pruned](/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/pruned.png)
 
 7.
 ## Question 4 (hands-on naive Bayes classifier)
