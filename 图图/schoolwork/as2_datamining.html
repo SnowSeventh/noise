@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-      </script>
       <meta charset="utf-8" />
       <title>as2_datamining</title>
 <script type="text/x-mathjax-config">
@@ -640,19 +637,19 @@ pre.editor-colors { overflow: auto; }</style>
 </table>
 <p><span class="math"><script type="math/tex">Gini=\frac{3}{5}\times(1-(\frac{2}{3})^2-(\frac{1}{3})^2)+\frac{2}{5}\times\frac{1}{2}=\frac{7}{15}</script></span></p>
 <p>Finally, the tree looks like this:</p>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t1.png?v=1524299465075" alt="tree"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t1.png?v=1524325505871" alt="tree"></p>
 </li>
 <li>
 <p><strong>b)</strong> I suppose not</p>
 <p>After calculation, generalization error of first split with a =<span class="math"><script type="math/tex">\frac{2+0.5\times3}{8}=0.4375</script></span>
 And the tree structure of first split with b looks like this:</p>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t2.png?v=1524299213829" alt="tree2"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t2.png?v=1524325505871" alt="tree2"></p>
 <p>generalization error of first split with b =<span class="math"><script type="math/tex">\frac{2+0.5\times4}{8}=0.5</script></span></p>
 <p><strong>We can find that the cost of these 2 trees are really close. So it is too hard to judge without calculation.</strong></p>
 </li>
 <li>
 <p><strong>c)</strong> Sure, it can be pruned and the new tree looks like this:</p>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t3.png?v=1524299213830" alt="tree3"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t3.png?v=1524325505871" alt="tree3"></p>
 <p>We can find that even the leaves of b are pruned, the misclassfied items are still 2.But the number of leaves decreases to 2, which means the generalization error decreases as well.</p>
 </li>
 <li>
@@ -696,7 +693,7 @@ And the tree structure of first split with b looks like this:</p>
 <ol>
 <li></li>
 </ol>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/dectree.png?v=1524300108179" alt="dectree"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/dectree.png?v=1524325505871" alt="dectree"></p>
 <ol start="2">
 <li>
 <p><span class="math"><script type="math/tex">GeneralizationError=0.00515</script></span></p>
@@ -710,7 +707,7 @@ And the tree structure of first split with b looks like this:</p>
 </li>
 <li></li>
 </ol>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/modified.png?v=1524300108180" alt="modified"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/modified.png?v=1524325505871" alt="modified"></p>
 <p>As you can see from the modified tree, the structure of this tree is amazing. All the work is done with only 2 splits:</p>
 <ul>
 <li>split with redshift &lt;= 0.002, then we will get all the class ‘Star’ on the left side;</li>
@@ -722,10 +719,11 @@ And the tree structure of first split with b looks like this:</p>
 <p>The pruned tree looks like this:</p>
 </li>
 </ol>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/pruned.png?v=1524300108180" alt="pruned"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/pruned.png?v=1524325505871" alt="pruned"></p>
 <ol start="7">
-<li></li>
+<li>See the picture below and you will find that the pruning is done: only 3 leaves remain and the train error is still 0.0113. So the <strong>generalization error = 1.5/10000+0.0113= 0.01145</strong>, which means the we get some improvement.</li>
 </ol>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/pruning.png?v=1524325546951" alt="pruning"></p>
 <h2>Question 4 (hands-on naive Bayes classifier)</h2>
 <p><strong>All details can be found at question4.ipynb</strong></p>
 <ol>

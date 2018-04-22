@@ -90,7 +90,9 @@ As you can see from the modified tree, the structure of this tree is amazing. Al
 
 ![pruned](/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/pruned.png)
 
-7.
+7. See the picture below and you will find that the pruning is done: only 3 leaves remain and the train error is still 0.0113. So the **generalization error = 1.5/10000+0.0113= 0.01145**, which means the we get some improvement.
+
+![pruning](/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/pruning.png)
 ## Question 4 (hands-on naive Bayes classifier)
 **All details can be found at question4.ipynb**
 1. average accuracy of MultinomialNB = 0.7375
