@@ -73,9 +73,9 @@ Apparently, $P(junior)>P(senior),->junior$
 
 2. $GeneralizationError=0.00515$
 
-3. With min_samples_leaf=100, the GeneralizationError increase to 0.0126 compared with **Part 2** as the num of misclassified labels increases even though the num of leaves decreases. To minimize the new GeneralizationError, most parameters do not work in DecisionTreeClassifier because of min_samples_leaf=100. However, I find that when Criterion is changed to 'entropy', the error will decrease slightly to 0.0126 from 0.0127
+3. With min_samples_leaf=100, the GeneralizationError increase to 0.0126 compared with **Part 2** as the num of misclassified labels increases even though the num of leaves decreases. **However, I don't think low error rate always means good to us as there may exist overfitting.** To minimize the new GeneralizationError, most parameters do not work in DecisionTreeClassifier because of min_samples_leaf=100. However, I find that when Criterion is changed to 'entropy', the error will decrease slightly to 0.0126 from 0.0127
 
-4. I think it depends: if you want 100% accuracy, the tree built in Part 1 is perfect as its num of misclassified labels is 0; However, if you want to classify faster and can accept a low error rate, the modified tree is OK with error rate lower than 0.0113.
+4. I think the tree built in **Part 1** is too complicated, which means it may overfit some data. Anyway, low error rate doesn't always means good to us.
 
     In this case, my recommendation is the modified tree. In the next part, you can find that the structure of it is really clear with acceptable error rate
 5.

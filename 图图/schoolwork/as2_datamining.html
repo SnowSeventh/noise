@@ -637,19 +637,19 @@ pre.editor-colors { overflow: auto; }</style>
 </table>
 <p><span class="math"><script type="math/tex">Gini=\frac{3}{5}\times(1-(\frac{2}{3})^2-(\frac{1}{3})^2)+\frac{2}{5}\times\frac{1}{2}=\frac{7}{15}</script></span></p>
 <p>Finally, the tree looks like this:</p>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t1.png?v=1524325505871" alt="tree"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t1.png?v=1524556920381" alt="tree"></p>
 </li>
 <li>
 <p><strong>b)</strong> I suppose not</p>
 <p>After calculation, generalization error of first split with a =<span class="math"><script type="math/tex">\frac{2+0.5\times3}{8}=0.4375</script></span>
 And the tree structure of first split with b looks like this:</p>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t2.png?v=1524325505871" alt="tree2"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t2.png?v=1524556920382" alt="tree2"></p>
 <p>generalization error of first split with b =<span class="math"><script type="math/tex">\frac{2+0.5\times4}{8}=0.5</script></span></p>
 <p><strong>We can find that the cost of these 2 trees are really close. So it is too hard to judge without calculation.</strong></p>
 </li>
 <li>
 <p><strong>c)</strong> Sure, it can be pruned and the new tree looks like this:</p>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t3.png?v=1524325505871" alt="tree3"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/t3.png?v=1524556920382" alt="tree3"></p>
 <p>We can find that even the leaves of b are pruned, the misclassfied items are still 2.But the number of leaves decreases to 2, which means the generalization error decreases as well.</p>
 </li>
 <li>
@@ -693,21 +693,21 @@ And the tree structure of first split with b looks like this:</p>
 <ol>
 <li></li>
 </ol>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/dectree.png?v=1524325505871" alt="dectree"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/dectree.png?v=1524556920382" alt="dectree"></p>
 <ol start="2">
 <li>
 <p><span class="math"><script type="math/tex">GeneralizationError=0.00515</script></span></p>
 </li>
 <li>
-<p>With min_samples_leaf=100, the GeneralizationError increase to 0.0126 compared with <strong>Part 2</strong> as the num of misclassified labels increases even though the num of leaves decreases. To minimize the new GeneralizationError, most parameters do not work in DecisionTreeClassifier because of min_samples_leaf=100. However, I find that when Criterion is changed to ‘entropy’, the error will decrease slightly to 0.0126 from 0.0127</p>
+<p>With min_samples_leaf=100, the GeneralizationError increase to 0.0126 compared with <strong>Part 2</strong> as the num of misclassified labels increases even though the num of leaves decreases. <strong>However, I don’t think low error rate always means good to us as there may exist overfitting.</strong> To minimize the new GeneralizationError, most parameters do not work in DecisionTreeClassifier because of min_samples_leaf=100. However, I find that when Criterion is changed to ‘entropy’, the error will decrease slightly to 0.0126 from 0.0127</p>
 </li>
 <li>
-<p>I think it depends: if you want 100% accuracy, the tree built in Part 1 is perfect as its num of misclassified labels is 0; However, if you want to classify faster and can accept a low error rate, the modified tree is OK with error rate lower than 0.0113.</p>
+<p>I think the tree built in <strong>Part 1</strong> is too complicated, which means it may overfit some data. Anyway, low error rate doesn’t always means good to us.</p>
 <p>In this case, my recommendation is the modified tree. In the next part, you can find that the structure of it is really clear with acceptable error rate</p>
 </li>
 <li></li>
 </ol>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/modified.png?v=1524325505871" alt="modified"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/modified.png?v=1524556920382" alt="modified"></p>
 <p>As you can see from the modified tree, the structure of this tree is amazing. All the work is done with only 2 splits:</p>
 <ul>
 <li>split with redshift &lt;= 0.002, then we will get all the class ‘Star’ on the left side;</li>
@@ -719,11 +719,11 @@ And the tree structure of first split with b looks like this:</p>
 <p>The pruned tree looks like this:</p>
 </li>
 </ol>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/pruned.png?v=1524325505871" alt="pruned"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/pruned.png?v=1524556920382" alt="pruned"></p>
 <ol start="7">
 <li>See the picture below and you will find that the pruning is done: only 3 leaves remain and the train error is still 0.0113. So the <strong>generalization error = 1.5/10000+0.0113= 0.01145</strong>, which means the we get some improvement.</li>
 </ol>
-<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/pruning.png?v=1524325546951" alt="pruning"></p>
+<p><img src="/Users/wangpeng/tutu/Noise/noise/图图/schoolwork/pruning.png?v=1524556920382" alt="pruning"></p>
 <h2>Question 4 (hands-on naive Bayes classifier)</h2>
 <p><strong>All details can be found at question4.ipynb</strong></p>
 <ol>
