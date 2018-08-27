@@ -910,7 +910,7 @@ myclient = pymongo.MongoClient('mongodb://localhost:27017/')
 mydb = myclient['pricing']
 mycol = mydb['new_record']
 ```
-理想的状态下，我们希望之后神经网络得到的训练集的样本空间足够离散且足够大，然而这一条件在我们之前的工作前提下很难被满足。回顾我们标准化的产品结构，产品dictionary中含有13个可变输入值，为了保证样本空间的充足和多样，我们假设每个参数有100中变化可能，那么，总的样本空间大小为：$100\times100.....\times100 = {10}^{26}$。即便每个参数只有10种变化可能，那样本空间也达到$10\times10.....\times10 = {10}^{13}$ 的级别。这样的数据量再结合之前提到的每次蒙特卡洛定价十几秒左右的时间损耗，我们几乎不可能在现有条件下兼顾上述所有的要求，控制可变数据的个数是十分必要的，具体的做法为：
+理想的状态下，我们希望之后神经网络得到的训练集的样本空间足够离散且足够大，然而这一条件在我们之前的工作前提下很难被满足。回顾我们标准化的产品结构，产品dictionary中含有13个可变输入值，为了保证样本空间的充足和多样，我们假设每个参数有100种变化可能，那么，总的样本空间大小为：$100\times100.....\times100 = {10}^{26}$。即便每个参数只有10种变化可能，那样本空间也达到$10\times10.....\times10 = {10}^{13}$ 的级别。这样的数据量再结合之前提到的每次蒙特卡洛定价十几秒左右的时间损耗，我们几乎不可能在现有条件下兼顾上述所有的要求，控制可变数据的个数是十分必要的，具体的做法为：
 
 1. 以如下这一份产品为基准合约：
 ```
@@ -1621,11 +1621,7 @@ $\frac{\partial E}{\partial w^{(l)}_{ji}} = \frac{\partial E}{\partial net^{(l)}
 上式是针对一个权重项$w_{ji}$的公式，现在需要把它扩展为对所有的权重项的公式。我们可以把上式写成矩阵的形式（在下面的公式中，m=2n）：
 
 $\frac{\partial E}{\partial W^{(l)}} =
-$$\begin{bmatrix}{\frac{\partial E}{\partial w_{11}^{(l)}}}&{\cdots}&{\cdots}\\{\vdots}&{\ddots}&{\cdots}\\{\vdots}&{\cdots}&{\frac{\partial E}{\partial w^{(l)}_{nm}}}\end{bmatrix}$  (15)
-
-=  $\begin{bmatrix}{\delta^{(l)}_{p_i}c_1^l}&{\cdots}&{\cdots}\\{\vdots}&{\ddots}&{\cdots}\\{\vdots}&{\cdots}&{\delta^{(l)}_{p_n}c_m^l}\end{bmatrix}$  (16)
-
-= $\delta ^{(l)}(c^{(l)})^T$  (式3)   (17)
+$$\begin{bmatrix}{\frac{\partial E}{\partial w_{11}^{(l)}}}&{\cdots}&{\cdots}\\{\vdots}&{\ddots}&{\cdots}\\{\vdots}&{\cdots}&{\frac{\partial E}{\partial w^{(l)}_{nm}}}\end{bmatrix}$  (15)  = $\begin{bmatrix}{\delta^{(l)}_{p_i}c_1^l}&{\cdots}&{\cdots}\\{\vdots}&{\ddots}&{\cdots}\\{\vdots}&{\cdots}&{\delta^{(l)}_{p_n}c_m^l}\end{bmatrix}$  (16)  =  $\delta ^{(l)}(c^{(l)})^T$  (式3)   (17)
 
 式3就是第l层权重项的梯度计算公式。我们知道，由于权重$W$是在所有层共享的，所以和循环神经网络一样，递归神经网络的最终的权重梯度是各个层权重梯度之和。即：
 
