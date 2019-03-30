@@ -920,8 +920,8 @@ mycol = mydb['new_record']
 std_info= {
     'start': '2017/11/9',
     'end': '2018/11/15',
-    'pricing_date': '2017/11/9', # 可变
-    'spot': 100.,  # 可变
+    'pricing_date': '2017/11/9',
+    'spot': 100.,  
     'knockoutdays': [['2017/12/14'],['2018/1/11'],['2018/2/8'],['2018/3/8'],['2018/4/12'],['2018/5/10'],['2018/6/14'],
                      ['2018/7/12'],['2018/8/9'],['2018/9/13'],['2018/10/11']],
     'knockindays': 'all',
@@ -929,8 +929,8 @@ std_info= {
     'lower_barrier': 0.86,
     'interest_rate': 0.14,
     'knockoutrate': 0.14,
-    'mu': -0.12, # 可变
-    'vol': 0.15, # 可变
+    'mu': -0.12,
+    'vol': 0.15,
     'r': 0.
 }
 ```
@@ -1107,8 +1107,7 @@ db = vector(collection_name='new_record', amount= 1423)
         start = ti.time()
         train_set = [self.db.vectorization(item) for item in self.db.fetch_data()]
         end = ti.time()
-        consume = str(end - start) + 's'
-        print '数据预处理结束, 耗时'+consume
+        consume = str(end - start) + 's
         return train_set
 ```
 可见，这次的训练集包含1423份合约。
@@ -1570,11 +1569,11 @@ $ (1)
 
 在上面的公式中，$p_i$表示父节点p的第i个分量；$c_{1i}$表示子节点$c_1$的第i个分量；$c_{2i}$表示子节点$c_2$的第i个分量；$w_{p_ic_{jk}}$表示子节点$c_j$的第k个分量到父节点p的第i个分量的的权重。根据上面展开后的矩阵乘法形式，我们不难看出，对于子节点$c_{jk}$来说，它会影响父节点所有的分量。因此，我们求误差函数E对$c_{jk}$的导数时，必须用到全导数公式，也就是：
 
-$\frac{\partial E}{\partial c_{jk}} = \sum{\frac{\partial E}{\partial net_{p_i}}\frac{\partial net_{p_i}}{\partial c_{jk}}}$ (2) $= \sum{\delta p_iw_{p_ic_{jk}}}$ (3)
+$\frac{\partial E}{\partial c_{jk}} = \sum{\frac{\partial E}{\partial net_{p_i}}\frac{\partial net_{p_i}}{\partial c_{jk}}}$  $= \sum{\delta p_iw_{p_ic_{jk}}}$
 
 有了上式，我们就可以把它表示为矩阵形式，从而得到一个向量化表达：
 
-$\frac{\partial E}{\partial c_j} = U_j\delta p$  (4)
+$\frac{\partial E}{\partial c_j} = U_j\delta p$
 
 其中，矩阵$U_j$是从矩阵W中提取部分元素组成的矩阵。其单元为：
 
@@ -1582,11 +1581,11 @@ $u_{jk} = w_{p_{k}c_{ji}}$
 
 现在，我们设$net_{c_j}$是子节点$c_j$的加权输入，$f$是子节点c的激活函数，则：
 
-$c_j = f(net_{c_j})$  (5)
+$c_j = f(net_{c_j})$  
 
 这样，我们得到：
 
-$\delta {c_j} = \frac{\partial E}{\partial net_{c_j}}  (6) = \frac{\partial E}{\partial c_j}\frac{\partial c_j}{\partial net_{c_j}}  (7) = W_j^T\delta p\circ f^{'}(net_{c_j})   (8)$
+$\delta {c_j} = \frac{\partial E}{\partial net_{c_j}}   = \frac{\partial E}{\partial c_j}\frac{\partial c_j}{\partial net_{c_j}}   = W_j^T\delta p\circ f^{'}(net_{c_j})   $
 
 如果我们将不同子节点$c_j$对应的误差项$\delta c_j$连接成一个向量$\delta c = $$\begin{bmatrix}{\delta c_{1}}\\{\delta c_{2}}\\\end{bmatrix}$,那么，上式可以写成：
 
@@ -1600,13 +1599,13 @@ $\delta c = W^T\delta p \circ f^{'}(net_c)$  (式2)
 
 上图是在树型结构中反向传递误差项的全景图，反复应用式2，在已知$\delta_ p^{(3)}$的情况下，我们不难算出$\delta p^{(1)}$为：
 
-$\delta {(2)} = W^T\delta p^{(3)}\circ  f^{'}(net^{(2)})$  (9)
+$\delta {(2)} = W^T\delta p^{(3)}\circ  f^{'}(net^{(2)})$  
 
-$\delta p^{(2)} = [\delta {(2)}]_p$  (10)
+$\delta p^{(2)} = [\delta {(2)}]_p$  
 
-$\delta {(1)} = W^T\delta p^{(2)}\circ  f^{'}(net^{(1)})$  (11)
+$\delta {(1)} = W^T\delta p^{(2)}\circ  f^{'}(net^{(1)})$
 
-$\delta p^{(1)} = [\delta {(1)}]_p$  (12)
+$\delta p^{(1)} = [\delta {(1)}]_p$  
 
 #### 5.3.2、权重梯度的计算
 根据加权输入的计算公式：
@@ -1619,12 +1618,12 @@ $net^l_{p_j} = \sum{w_{ji}c_i^l} + b_j $
 
 那么，我们可以求得误差函数在第l层对权重的梯度为：
 
-$\frac{\partial E}{\partial w^{(l)}_{ji}} = \frac{\partial E}{\partial net^{(l)}_{p_i}}\frac{\partial net^{(l)}_{p_j}}{\partial w^{(l)}_{ji}}  (13) = \delta^{(l)}_{p_j}c^{(l)}_i  (14)$
+$\frac{\partial E}{\partial w^{(l)}_{ji}} = \frac{\partial E}{\partial net^{(l)}_{p_i}}\frac{\partial net^{(l)}_{p_j}}{\partial w^{(l)}_{ji}}   = \delta^{(l)}_{p_j}c^{(l)}_i  $
 
 上式是针对一个权重项$w_{ji}$的公式，现在需要把它扩展为对所有的权重项的公式。我们可以把上式写成矩阵的形式（在下面的公式中，m=2n）：
 
 $\frac{\partial E}{\partial W^{(l)}} =
-$$\begin{bmatrix}{\frac{\partial E}{\partial w_{11}^{(l)}}}&{\cdots}&{\cdots}\\{\vdots}&{\ddots}&{\cdots}\\{\vdots}&{\cdots}&{\frac{\partial E}{\partial w^{(l)}_{nm}}}\end{bmatrix}$  (15)  = $\begin{bmatrix}{\delta^{(l)}_{p_i}c_1^l}&{\cdots}&{\cdots}\\{\vdots}&{\ddots}&{\cdots}\\{\vdots}&{\cdots}&{\delta^{(l)}_{p_n}c_m^l}\end{bmatrix}$  (16)  =  $\delta ^{(l)}(c^{(l)})^T$  (式3)   (17)
+$$\begin{bmatrix}{\frac{\partial E}{\partial w_{11}^{(l)}}}&{\cdots}&{\cdots}\\{\vdots}&{\ddots}&{\cdots}\\{\vdots}&{\cdots}&{\frac{\partial E}{\partial w^{(l)}_{nm}}}\end{bmatrix}$    = $\begin{bmatrix}{\delta^{(l)}_{p_i}c_1^l}&{\cdots}&{\cdots}\\{\vdots}&{\ddots}&{\cdots}\\{\vdots}&{\cdots}&{\delta^{(l)}_{p_n}c_m^l}\end{bmatrix}$    =  $\delta ^{(l)}(c^{(l)})^T$  (式3)   
 
 式3就是第l层权重项的梯度计算公式。我们知道，由于权重$W$是在所有层共享的，所以和循环神经网络一样，递归神经网络的最终的权重梯度是各个层权重梯度之和。即：
 
@@ -1632,7 +1631,7 @@ $\frac{\partial E}{\partial W} = \sum_{l}{\frac{\partial E}{\partial W^{(l)}}}$ 
 
 接下来，我们求偏置项$b$的梯度计算公式。先计算误差函数对第l层偏置项$b^{(l)}$的梯度：
 
-$\frac{\partial E}{\partial b^{(l)}_j} = \frac{\partial E}{\partial net^{(l)}_{p_j}}\frac{\partial net^{(l)}_{p_j}}{\partial b^{(l)}_j}  (18) = \delta^{(l)}_{p_j}   (19)$
+$\frac{\partial E}{\partial b^{(l)}_j} = \frac{\partial E}{\partial net^{(l)}_{p_j}}\frac{\partial net^{(l)}_{p_j}}{\partial b^{(l)}_j}   = \delta^{(l)}_{p_j}   $
 
 把上式拓展为矩阵形式：
 
